@@ -1,12 +1,21 @@
 import React from 'react';
 
-const Book = ({ title, author, image }) => {
+import { booksArray } from '../data';
+
+const Book = () => {
   return (
-    <article className='book'>
-      <img src={image} alt={title} />
-      <h2>{title}</h2>
-      <h2>{author}</h2>
-    </article>
+    <>
+      {booksArray.map((book) => {
+        const { id, title, author, image } = book;
+        return (
+          <article key={id} className='book'>
+            <img src={image} alt='' />
+            <h1>{title}</h1>
+            <h4>{author}</h4>
+          </article>
+        );
+      })}
+    </>
   );
 };
 
