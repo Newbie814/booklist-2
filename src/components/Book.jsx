@@ -1,13 +1,11 @@
 import React from 'react';
 
-import { Image, Title, Author } from './booklist-components';
-
-const Book = () => {
+const Book = ({ title, author, image }) => {
   return (
     <article className='book'>
-      <Image />
-      <Title />
-      <Author />
+      <img src={image} alt={title} />
+      <h2>{title}</h2>
+      <h2>{author}</h2>
     </article>
   );
 };
